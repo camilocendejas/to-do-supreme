@@ -13,4 +13,8 @@ export class TareaService{
     getTareas(){
         return this.tareas.slice();
     }
+
+    getTarea(index: number){
+        return this.tareas[index];
+    }
 }

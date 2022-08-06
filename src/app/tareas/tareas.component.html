@@ -3,11 +3,6 @@
         <app-lista-tareas></app-lista-tareas>
     </div>
     <div class="col-md-7">
-        <app-tarea-detalle 
-            *ngIf="selectedTarea; else infoText"
-            [tarea]="selectedTarea"></app-tarea-detalle>
-        <ng-template #infoText>
-            <p>Selecciona una tarea</p>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>

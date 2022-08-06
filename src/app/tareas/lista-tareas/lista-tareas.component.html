@@ -7,7 +7,9 @@
 <div class="row">
     <div class="col-xs-12">
         <app-tarea-item  
-        *ngFor="let tareaElement of tareas" 
-        [tarea]="tareaElement"></app-tarea-item>
+        *ngFor="let tareaElement of tareas; let i = index" 
+        [tarea]="tareaElement"
+        [index]="i"
+        ></app-tarea-item>
     </div>
 </div>

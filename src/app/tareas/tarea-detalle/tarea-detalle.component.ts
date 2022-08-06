@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
 import { Tarea } from '../tarea.model';
+import { TareaService } from '../tarea.service';
 
 @Component({
   selector: 'app-tarea-detalle',
@@ -7,10 +10,17 @@ import { Tarea } from '../tarea.model';
   styleUrls: ['./tarea-detalle.component.css']
 })
 export class TareaDetalleComponent implements OnInit {
-@Input() tarea: Tarea
-  constructor() { }
+  tareas: Tarea;
+  id: number;
+  constructor(private tareaService: TareaService, private router: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.router.params.subscribe(
+      (params: Params) =>{
+        this.id = +params['id'];
+        this.tareas = this.tareaService.getTarea(this.id);
+      }
+    )
   }
 
 }

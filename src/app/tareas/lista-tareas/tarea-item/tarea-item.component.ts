@@ -1,6 +1,6 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { Tarea } from '../../tarea.model';
-import { TareaService } from '../../tarea.service';
+
 
 @Component({
   selector: 'app-tarea-item',
@@ -9,13 +9,9 @@ import { TareaService } from '../../tarea.service';
 })
 export class TareaItemComponent implements OnInit {
 @Input() tarea: Tarea;
+@Input() index: number;
 
-  constructor(private tareaService: TareaService) { }
 
   ngOnInit(): void {
   }
-
-  onSelected(){
-    this.tareaService.tareaSelected.emit(this.tarea);
-  };
 }

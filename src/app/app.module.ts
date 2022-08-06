@@ -10,6 +10,7 @@ import { TareaDetalleComponent } from './tareas/tarea-detalle/tarea-detalle.comp
 import { TareaItemComponent } from './tareas/lista-tareas/tarea-item/tarea-item.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { TareaStartComponent } from './tareas/tarea-start/tarea-start.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ListaTareasComponent,
     TareaDetalleComponent,
     TareaItemComponent,
-    DropdownDirective
+    DropdownDirective,
+    TareaStartComponent
   ],
   imports: [
     BrowserModule,
