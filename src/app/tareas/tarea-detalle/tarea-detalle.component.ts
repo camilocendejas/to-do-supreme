@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Tarea } from '../tarea.model';
 import { TareaService } from '../tarea.service';
@@ -12,7 +12,7 @@ import { TareaService } from '../tarea.service';
 export class TareaDetalleComponent implements OnInit {
   tareas: Tarea;
   id: number;
-  constructor(private tareaService: TareaService, private router: ActivatedRoute) { }
+  constructor(private tareaService: TareaService, private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit() {
     this.router.params.subscribe(
@@ -21,6 +21,15 @@ export class TareaDetalleComponent implements OnInit {
         this.tareas = this.tareaService.getTarea(this.id);
       }
     )
+  }
+
+  onEditTarea(){
+    this.route.navigate(['edit'], {relativeTo: this.router});
+  }
+
+  onEliminateTarea(){
+    this.tareaService.eliminarTarea(this.id);
+    this.route.navigate(['/tareas']);
   }
 
 }

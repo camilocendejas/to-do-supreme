@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">	
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" class="form-control" formControlName="nombre">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" class="form-control" formControlName="fecha">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="hora" class="form-control" formControlName="hora">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="detalle">Detalle:</label>
+                        <textarea id="detalle" rows="6" class="form-control" formControlName="detalle"></textarea>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary" style="margin-right: 5px;" [disabled]="!tareaForm.valid">Agregar</button>
+                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancelar</button>
+                </div>
+            </div>           
+        </form>
+    </div>
+</div>

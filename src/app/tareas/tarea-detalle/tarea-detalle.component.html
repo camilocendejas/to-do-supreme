@@ -3,20 +3,22 @@
         <h1>{{tareas.nombre}}</h1>
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-xs-12">
-        <hr>
+        <h5> {{tareas.fecha}} {{tareas.hora}}</h5>       
+        <h4>{{tareas.detalle}}</h4> 
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">       
         <div class="btn-group" appDropdown>
             <button type="button" class="btn btn-primary dropdown-toggle">Administrar <span class="caret"></span></button>
             <ul class="dropdown-menu">   
-                <li><a style="cursor: pointer;">Editar</a></li>
-                <li><a style="cursor: pointer;">Eliminar</a></li>
+                <li><a style="cursor: pointer;" (click)="onEditTarea()">Editar</a></li>
+                <li><a style="cursor: pointer;" (click)="onEliminateTarea()">Eliminar</a></li>
             </ul>
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <h4>{{tareas.detalle}}</h4> 
     </div>
 </div>
