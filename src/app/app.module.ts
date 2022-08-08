@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http'
 
 import { HeaderComponent } from './header/header.component';
 import { TareasComponent } from './tareas/tareas.component';
@@ -13,6 +14,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { TareaStartComponent } from './tareas/tarea-start/tarea-start.component';
 import { TareaEditComponent } from './tareas/tarea-edit/tarea-edit.component';
 import { TareaService } from './tareas/tarea.service';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { TareaService } from './tareas/tarea.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [TareaService],
   bootstrap: [AppComponent]

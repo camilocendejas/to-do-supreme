@@ -5,19 +5,15 @@ import { TareaService } from './tarea.service';
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
-  styleUrls: ['./tareas.component.css'],
-  providers: [TareaService]
+  styleUrls: ['./tareas.component.css']
+  
 })
 export class TareasComponent implements OnInit {
   selectedTarea: Tarea;
-  constructor(private tareaService: TareaService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.tareaService.tareaSelected.subscribe(
-      (tarea: Tarea) => {
-        this.selectedTarea = tarea;
-      }
-      );
+
   }
 
 }

@@ -7,18 +7,12 @@
             <a routerLink="/tareas" class="navbar-brand">ToDo Supreme</a>
         </div>
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
-            <ul class="nav navbar-nav">
-                <li><a>Buscar</a></li>
-                <li><a>Fecha</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown" appDropdown>
-                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a style="cursor: pointer;">Save Data</a></li>
-                        <li><a style="cursor: pointer;">Fetch Data</a></li>
-                    </ul>
-                </li>
+            <ul class="nav navbar-nav" >
+                <form class="form-inline" style="margin-top: 7px;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Buscar...">
+                    <button class="btn btn-primary" type="submit" style="margin-left: 3px;">Buscar</button>
+                </form>
+                
             </ul>
         </div>
     </div>

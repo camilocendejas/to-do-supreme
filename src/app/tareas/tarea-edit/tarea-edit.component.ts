@@ -48,12 +48,11 @@ export class TareaEditComponent implements OnInit {
       'nombre': new FormControl(nombreTarea, Validators.required),
       'fecha': new FormControl(fechaTarea, Validators.required),
       'hora': new FormControl(horaTarea),
-      'descripcion': new FormControl(detalleTarea)
+      'detalle': new FormControl(detalleTarea)
     });
   }
 
   onSubmit(){
-    //console.log(this.tareaForm);
     //const tareaNueva = new Tarea(this.tareaForm.value['nombre'],this.tareaForm.value['descripcion'],this.tareaForm.value['fecha'],this.tareaForm.value['hora'],);
     if(this.editar){
       this.tareaServicio.updateTarea(this.id, this.tareaForm.value);
